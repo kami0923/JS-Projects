@@ -54,8 +54,10 @@ document.addEventListener('DOMContentLoaded',()=>{
             cart.forEach((item,index)=>{
                 totalPrice+=item.price;
                 const cartItem=document.createElement('div');
+                cartItem.classList.add('cart-item');
                 cartItem.innerHTML=`
-                ${item.name} -$${item.price.toFixed(2)}
+                <span>${item.name} - $${item.price.toFixed(2)}</span>
+                <button class="remove-btn" data-index="${index}">Remove</button>
                 `;
                 cartItems.appendChild(cartItem);
                 totalPriceDisplay.textContent=`$${totalPrice.toFixed(2)}`;
@@ -74,6 +76,18 @@ document.addEventListener('DOMContentLoaded',()=>{
         alert("Checkout successfully!");
         renderCart();
      })
+
+     cartItems.addEventListener('click',(e)=>{
+        if(e.target.classList.contains('remove-btn')){
+            const index=parseInt(e.target.getAttribute('data-index'));
+            removeFromCart(index);
+        }
+     });
+
+     function removeFromCart(index){
+        cart.splice(index,1);
+        renderCart();
+     }
 
 
 

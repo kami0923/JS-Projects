@@ -206,6 +206,55 @@ input:hover {
     display: none;
 }
 
+/* Cart Item Styling */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    border-left: 4px solid #f5af19;
+    transition: all 0.3s ease;
+}
+
+.cart-item:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateX(5px);
+}
+
+.cart-item span {
+    font-size: 1rem;
+    color: #fff;
+    flex: 1;
+}
+
+/* Remove Button Styling */
+.remove-btn {
+    background: linear-gradient(90deg, #ff6b6b, #ee5a6f);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    margin-left: 10px;
+}
+
+.remove-btn:hover {
+    background: linear-gradient(90deg, #ee5a6f, #ff6b6b);
+    transform: scale(1.08);
+    box-shadow: 0 0 12px rgba(255, 107, 107, 0.5);
+}
+
+.remove-btn:active {
+    transform: scale(0.95);
+}
+
 /* Mobile Responsive */
 @media (max-width: 600px) {
     .product-card {
